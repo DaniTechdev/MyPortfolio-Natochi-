@@ -83,7 +83,11 @@ a {
 
   /* Gradient options */
   /* --gradient-primary: linear-gradient(135deg, #c8cdd6 0%, #0aa7f6 100%); */
-  --gradient-primary: linear-gradient(267deg, rgb(22, 46, 56), rgb(21, 49, 62));
+  --gradient-primary: linear-gradient(
+    267deg,
+    rgb(22, 46, 56),
+    rgb(20, 78, 106)
+  );
   --gradient-subtle: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   --gradient-accent: linear-gradient(
     135deg,
