@@ -55,6 +55,7 @@
   background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
   cursor: pointer;
   transition: 0.3s;
+  color: white;
 }
 
 .footer_subscribe:hover {
