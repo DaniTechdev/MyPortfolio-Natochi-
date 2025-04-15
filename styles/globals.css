@@ -17,20 +17,13 @@ a {
   --text-secondary: #a4bac6;
 
   /* Accent colors - based on rgb(22, 46, 56) [#162e38] */
-  --primary: #162e38;
+  --primary: #6ca2b9;
   --primary-light: #1e3c4a;
   --primary-lighter: #284c5c;
 
   /* Complementary accent */
   --accent: #382e16;
   --accent-light: #4a3c1e;
-
-  /* Neutral tones */
-  --neutral-900: #0c1a20;
-  --neutral-800: #122530;
-  --neutral-700: #162e38;
-  --neutral-600: #1e3c4a;
-  --neutral-500: #284c5c;
 
   /* Surface colors */
   --card-bg: #122530;
@@ -45,7 +38,7 @@ a {
   --gradient-primary: linear-gradient(
     267deg,
     rgb(22, 46, 56),
-    rgb(55, 98, 117)
+    rgb(6, 175, 248)
   );
   --gradient-vibrant: linear-gradient(135deg, #162e38 0%, #284c5c 100%);
   --gradient-subtle: linear-gradient(135deg, #0c1a20 0%, #122530 100%);
@@ -70,18 +63,14 @@ a {
 :root[data-theme="light"] {
   /* Primary colors */
   --background: #dad4d4;
-  --text: #111010;
+  /* --text: #4479cd; */
+  --text: #1b1e1e;
   --text-secondary: #555555;
 
   /* Accent colors */
   --primary: rgb(185, 191, 193);
   --primary-hover: #1a66ff;
   --secondary: #8ecae6;
-
-  /* Neutral tones */
-  --neutral-100: #f8f9fa;
-  --neutral-200: #e9ecef;
-  --neutral-300: #dee2e6;
 
   /* Surface colors */
   --card-bg: #ffffff;
@@ -93,7 +82,8 @@ a {
   --button-text: #ffffff;
 
   /* Gradient options */
-  --gradient-primary: linear-gradient(135deg, #c8cdd6 0%, #0aa7f6 100%);
+  /* --gradient-primary: linear-gradient(135deg, #c8cdd6 0%, #0aa7f6 100%); */
+  --gradient-primary: linear-gradient(267deg, rgb(22, 46, 56), rgb(21, 49, 62));
   --gradient-subtle: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   --gradient-accent: linear-gradient(
     135deg,

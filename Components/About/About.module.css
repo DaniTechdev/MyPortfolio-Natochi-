@@ -98,7 +98,7 @@
   width: 50%;
   height: 8px;
   border-radius: 50px;
-  background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+  background: var(--gradient-primary);
 }
 .about_profileimg {
   width: 500px;
@@ -136,7 +136,7 @@
 .about_ahcievement h1 {
   font-size: 60px;
   font-weight: 700;
-  background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+  background: var(--gradient-primary);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -255,7 +255,7 @@
     width: fit-content;
     height: 8px;
     border-radius: 50px;
-    background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+    background: var(--gradient-primary);
   }
   .about_skills_mob {
     display: none;
@@ -319,7 +319,7 @@
     height: 8px;
     border-radius: 50px;
     margin-left: 5px;
-    background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+    background: var(--gradient-primary);
   }
 
   .about_skills_mob {
@@ -360,7 +360,7 @@
     height: 8px;
     border-radius: 50px;
     margin-left: 5px;
-    background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+    background: var(--gradient-primary));
   }
 
   .about_achievements {
@@ -390,7 +390,7 @@
   .about_ahcievement h1 {
     font-size: 32px;
     font-weight: 700;
-    background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+    background: var(--gradient-primary);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -409,7 +409,7 @@
   .about_ahcievement h1 {
     font-size: 30px;
     font-weight: 700;
-    background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+    background:var(--gradient-primary);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
