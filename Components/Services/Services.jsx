@@ -18,7 +18,11 @@ const Services = () => {
           className={Style.theme_patternimg}
         />
       </div>
-      <div className={Style.services_container}>
+      <div
+        className={Style.services_container}
+        data-aos="fade-UP"
+        data-aos-duration="1500"
+      >
         {Services_Data.map((service, index) => {
           return (
             <div key={index} className={Style.service_format}>

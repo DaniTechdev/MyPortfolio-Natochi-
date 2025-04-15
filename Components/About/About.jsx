@@ -27,7 +27,11 @@ const About = () => {
           // data-aos="fade-up"
           // data-aos-duration="2000"
         >
-          <div className={Style.about_para}>
+          <div
+            className={Style.about_para}
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <p>
               As a blockchain developer with over 7 years of blockchain
               knowledge and 3+ years of hands-on technical experience, I've
@@ -43,8 +47,8 @@ const About = () => {
           </div>{" "}
           <div
             className={Style.about_skills}
-            // data-aos="fade-right"
-            // data-aos-duration="2000"
+            data-aos="fade-right"
+            data-aos-duration="2000"
           >
             <div className={Style.about_skill}>
               <p>HTML & CSS </p>
@@ -85,8 +89,8 @@ const About = () => {
           {/* About Skills mobile */}
           <div
             className={Style.about_skills_mob}
-            // data-aos="fade-right"
-            // data-aos-duration="2000"
+            data-aos="fade-right"
+            data-aos-duration="1500"
           >
             <div className={Style.about_skill_mob}>
               <p>HTML & CSS </p>
@@ -134,7 +138,11 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className={Style.about_achievements}>
+      <div
+        className={Style.about_achievements}
+        data-aos="fade-right"
+        data-aos-duration="1500"
+      >
         <div className={Style.about_ahcievement}>
           <h1> 7+</h1>
           <p> YEARS OF BLOCHCHAIN KNOWLEDGE EXPERIENCE</p>
