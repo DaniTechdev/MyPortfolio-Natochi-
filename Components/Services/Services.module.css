@@ -129,7 +129,7 @@
   }
   .service_format:hover {
     border: 2px solid rgb(27, 111, 147);
-    background: var(--gradient-primary);
+    /* background: var(--gradient-primary); */
     transform: scale(1.05);
     transition: 0.4s;
   }
