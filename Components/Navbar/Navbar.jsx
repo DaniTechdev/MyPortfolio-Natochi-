@@ -3,6 +3,8 @@
 import React, { useRef, useState, useContext } from "react";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { FaWindowClose } from "react-icons/fa";
+import { MdOutlineWbSunny } from "react-icons/md";
+import { MdSunny } from "react-icons/md";
 
 //Internal import
 import { ThemeContext } from "../../Context/themecontext";
@@ -39,7 +41,16 @@ const Navbar = () => {
         onClick={toggleTheme}
         aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
       >
-        {theme === "light" ? "🌙" : "☀️"}
+        {theme === "light" ? (
+          <MdSunny
+            Style={{ width: "50px", height: "50px", backGround: "white" }}
+          />
+        ) : (
+          <MdOutlineWbSunny
+            Style={{ width: "50px", height: "50px" }}
+            className={Style.sunny}
+          />
+        )}
       </button>
       <MdOutlineMenuOpen className={Style.open_menu} onClick={openMenu} />
       <ul ref={menuRef} className={Style.nav_menu}>
