@@ -31,6 +31,8 @@ const MyWork = () => {
               className={Style.mywork_img}
               src={mywork.w_img}
               alt={mywork.alt}
+              data-aos="fade-UP"
+              data-aos-duration="1500"
             />
           );
         })}
