@@ -18,14 +18,15 @@ const Services = () => {
           className={Style.theme_patternimg}
         />
       </div>
-      <div
-        className={Style.services_container}
-        data-aos="fade-UP"
-        data-aos-duration="1500"
-      >
+      <div className={Style.services_container}>
         {Services_Data.map((service, index) => {
           return (
-            <div key={index} className={Style.service_format}>
+            <div
+              key={index}
+              className={Style.service_format}
+              data-aos="fade-UP"
+              data-aos-duration="1500"
+            >
               <h3>{service.S_no}</h3>
               <h2>{service.s_name}</h2>
               <p>{service.s_description}</p>
