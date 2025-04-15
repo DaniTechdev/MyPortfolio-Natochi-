@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     // Read the current theme attribute that was set by the script
     const currentTheme =
-      document.documentElement.getAttribute("data-theme") || "light";
+      document.documentElement.getAttribute("data-theme") || "dark";
     setTheme(currentTheme);
   }, []);
 
