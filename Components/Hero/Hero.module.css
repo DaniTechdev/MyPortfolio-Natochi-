@@ -1,0 +1,144 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  /* border: 1px solid blue; */
+}
+
+.profilePic {
+  margin-top: 150px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+}
+
+.hero h1 {
+  text-align: center;
+  width: 70%;
+  font-size: 90px;
+  font-weight: 600;
+  color: white;
+}
+
+.hero h1 span {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  width: 50%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 40px;
+  color: var(--text);
+}
+
+.hero_action {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.hero_connect {
+  padding: 25px 45px;
+  border-radius: 50px;
+  background: linear-gradient(267deg, rgb(22, 46, 56), rgb(61, 121, 145));
+  cursor: pointer;
+}
+
+.hero_resume {
+  padding: 25px 45px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 2px solid white;
+  color: var(--text);
+}
+
+.hero_connect:hover {
+  border: 2px solid white;
+}
+.hero_resume:hover {
+  border-color: rgb(22, 46, 56);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    /* background-color: green; */
+  }
+  .profilePic {
+    margin-top: 120px;
+    width: 260px;
+  }
+
+  .hero h1 {
+    margin-top: 50px;
+    width: 90%;
+    font-size: 50px;
+  }
+
+  .hero p {
+    width: 60%;
+    font-size: 18px;
+    line-height: 25px;
+    margin: 10px 0px;
+  }
+
+  .hero_action {
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  .hero_connect {
+    padding: 14px 20px;
+    border-radius: 40px;
+  }
+
+  .hero_resume {
+    padding: 14px 20px;
+    border-radius: 40px;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero {
+    gap: 20px;
+    width: 100%;
+    /* background-color: green; */
+  }
+
+  .profilePic {
+    margin-top: 80px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    margin-top: 30px;
+    width: 90%;
+    font-size: 30px;
+  }
+}

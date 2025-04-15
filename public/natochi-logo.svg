@@ -1,0 +1,14 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background shape -->
+  <rect x="50" y="50" width="300" height="100" rx="20" ry="20" fill="#1a5276" />
+  
+  <!-- Text -->
+  <text x="200" y="115" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#ffffff">NATOCHI</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="80" cy="85" r="8" fill="#f4d03f" />
+  <circle cx="320" cy="115" r="8" fill="#f4d03f" />
+  
+  <!-- Connecting line -->
+  <path d="M80 85 L320 115" stroke="#f4d03f" stroke-width="3" stroke-opacity="0.6" />
+</svg>
