@@ -159,6 +159,73 @@
   border-radius: 4px;
 }
 
+@media (max-width: 1025px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 0px;
+    color: var(--text);
+    /* border: 1px solid red; */
+    width: 100%;
+  }
+
+  .contact_section {
+    display: flex;
+    gap: 20px;
+  }
+
+  .contact_left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 35%;
+    padding: 10px;
+  }
+
+  .contact_left h1 {
+    font-size: 50px;
+    font-weight: 700;
+    background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .contact_right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    width: 65%;
+  }
+
+  .contact_right input {
+    border: none;
+    width: 90%;
+    height: 70px;
+    padding-left: 20px;
+    border-radius: 4px;
+    background: rgb(22, 46, 56);
+    color: var(--text);
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+  }
+
+  .contact_right textarea {
+    width: 90%;
+    border: none;
+    padding: 25px;
+    border-radius: 4px;
+    background: rgb(22, 46, 56);
+    color: var(--text);
+
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .contact {
     gap: 50px;

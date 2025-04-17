@@ -149,6 +149,18 @@
   /* border: 1px solid sandybrown; */
   word-wrap: break-word;
 }
+
+
+
+@media (max-width: 1441px) {
+  .about{
+    /* margin: 0px 20px; */
+    /* width: 100%; */
+    border: 1px solid blue;
+    padding: 0px 30px;
+  }
+
+}
 @media (max-width: 769px) {
   .about {
     display: flex;

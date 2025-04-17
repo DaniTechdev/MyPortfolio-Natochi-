@@ -88,6 +88,27 @@
     -2px -2px 5px 0px rgb(0 0 0 / 20%);
 }
 
+@media (max-width: 1025px) {
+  .services {
+    /* margin: 0px 20px; */
+    /* width: 100%; */
+    border: 1px solid blue;
+    /* padding: 0px 30px; */
+  }
+
+  .services_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 80px;
+    margin-top: 60px;
+  }
+
+  .service_format {
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .services {
     /* align-items: start; */
