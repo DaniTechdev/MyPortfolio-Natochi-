@@ -69,7 +69,7 @@ const Navbar = () => {
             <></>
           )}
         </li>
-        <li onClick={() => handleMenuClick("about")}>
+        <li onClick={() => (handleMenuClick("about"), closeMenu())}>
           <a href="#about">
             {" "}
             <p>About Me</p>
@@ -84,7 +84,7 @@ const Navbar = () => {
             <></>
           )}
         </li>
-        <li onClick={() => handleMenuClick("services")}>
+        <li onClick={() => (handleMenuClick("services"), closeMenu())}>
           <a href="#services">
             <p>Service</p>
           </a>
@@ -98,7 +98,7 @@ const Navbar = () => {
             <></>
           )}
         </li>
-        <li onClick={() => handleMenuClick("work")}>
+        <li onClick={() => (handleMenuClick("work"), closeMenu())}>
           <a href="#mywork">
             <p>Portfolio</p>
           </a>
@@ -112,7 +112,7 @@ const Navbar = () => {
             <></>
           )}
         </li>
-        <li onClick={() => handleMenuClick("contact")}>
+        <li onClick={() => (handleMenuClick("contact"), closeMenu())}>
           <a href="#contact">
             {" "}
             <p>Contact</p>
