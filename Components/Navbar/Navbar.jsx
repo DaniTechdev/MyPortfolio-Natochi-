@@ -22,6 +22,7 @@ const Navbar = () => {
 
   const closeMenu = () => {
     menuRef.current.style.right = "-400px";
+    menuRef.current.style.transition = "all 0.5s ease-in-out";
   };
 
   const handleMenuClick = (menuName) => {
