@@ -150,17 +150,13 @@
   word-wrap: break-word;
 }
 
-
-
-
 @media (max-width: 1441px) {
-  .about{
+  .about {
     /* margin: 0px 20px; */
     /* width: 100%; */
     /* border: 1px solid blue; */
     padding: 0px 30px;
   }
-
 }
 
 @media (max-width: 1025px) {
@@ -172,9 +168,7 @@
     gap: 40px;
     margin: 80px 0px;
     width: 100%;
-    /* border: 1px solid blue; */
   }
-
 }
 @media (max-width: 769px) {
   .about {
@@ -387,7 +381,7 @@
     height: 8px;
     border-radius: 50px;
     margin-left: 5px;
-    background: var(--gradient-primary));
+    background: var(--gradient-primary);
   }
 
   .about_achievements {
@@ -436,7 +430,7 @@
   .about_ahcievement h1 {
     font-size: 30px;
     font-weight: 700;
-    background:var(--gradient-primary);
+    background: var(--gradient-primary);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
