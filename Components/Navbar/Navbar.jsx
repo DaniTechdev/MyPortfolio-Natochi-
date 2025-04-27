@@ -55,7 +55,7 @@ const Navbar = () => {
       <MdOutlineMenuOpen className={Style.open_menu} onClick={openMenu} />
       <ul ref={menuRef} className={Style.nav_menu}>
         <FaWindowClose className={Style.menu_closemob} onClick={closeMenu} />
-        <li onClick={() => handleMenuClick("home")}>
+        <li onClick={() => (handleMenuClick("home"), closeMenu())}>
           <a href="#home">
             <p> Home</p>
           </a>
