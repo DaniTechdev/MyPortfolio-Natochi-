@@ -17,7 +17,7 @@ export default function Document() {
                 document.documentElement.setAttribute('data-theme', theme);
               } catch (err) {
                 console.error('Failed to access localStorage for theme');
-                document.documentElement.setAttribute('data-theme', 'light');
+                document.documentElement.setAttribute('data-theme', 'dark');
               }
             })();
           `,
