@@ -6,7 +6,7 @@ export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   // Initialize theme state from what was already set in _document.js
-  const [theme, setTheme] = useState("light"); // Default value will be quickly updated
+  const [theme, setTheme] = useState("dark"); // Default value will be quickly updated
 
   useEffect(() => {
     // Read the current theme attribute that was set by the script
