@@ -13,7 +13,7 @@ export default function Document() {
             (function() {
               try {
                 var savedTheme = localStorage.getItem('theme');
-                var theme = savedTheme || 'light';
+                var theme = savedTheme || 'dark';
                 document.documentElement.setAttribute('data-theme', theme);
               } catch (err) {
                 console.error('Failed to access localStorage for theme');
