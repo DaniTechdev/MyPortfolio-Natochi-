@@ -13,11 +13,11 @@ export default function Document() {
             (function() {
               try {
                 var savedTheme = localStorage.getItem('theme');
-                var theme = savedTheme || 'dark';
+                var theme = savedTheme || 'light';
                 document.documentElement.setAttribute('data-theme', theme);
               } catch (err) {
                 console.error('Failed to access localStorage for theme');
-                document.documentElement.setAttribute('data-theme', 'dark');
+                document.documentElement.setAttribute('data-theme', 'light');
               }
             })();
           `,
