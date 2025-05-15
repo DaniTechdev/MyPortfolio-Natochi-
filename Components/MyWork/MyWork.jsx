@@ -26,14 +26,26 @@ const MyWork = () => {
       <div className={Style.mywork_container}>
         {mywork_data.map((mywork, index) => {
           return (
-            <img
-              key={index}
-              className={Style.mywork_img}
-              src={mywork.w_img}
-              alt={mywork.alt}
-              data-aos="fade-UP"
-              data-aos-duration="1500"
-            />
+            <>
+              <div
+                data-aos="fade-UP"
+                data-aos-duration="1500"
+                className={Style.work_container}
+              >
+                <img
+                  key={index}
+                  className={Style.mywork_img}
+                  src={mywork.w_img}
+                  alt={mywork.alt}
+                />
+                <div className={Style.desc_box}>
+                  <h2>{mywork.w_name}</h2>
+                  <div className={Style.mywork_btn}>
+                    <button>Project details</button>
+                  </div>
+                </div>
+              </div>
+            </>
           );
         })}
       </div>
