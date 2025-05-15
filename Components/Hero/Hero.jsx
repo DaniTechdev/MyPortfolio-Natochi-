@@ -32,9 +32,9 @@ const Hero = () => {
         {text}
       </h2>
       <p data-aos="fade-up" data-aos-duration="2000">
-        I am a blockchain developer, with over 7 years blockchain knowlegdge and
+        I am a blockchain developer, with over 7 years blockchain knowledge and
         over 3 years technical experience in blockchain development, who is
-        passionation in building scalable blockchain applications.
+        passionate in building scalable blockchain applications.
       </p>
       <div className={Style.hero_action}>
         <div
