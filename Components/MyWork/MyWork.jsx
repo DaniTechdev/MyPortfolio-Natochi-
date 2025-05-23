@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //Internal  import
 import Style from "./MyWork.module.css";
@@ -8,6 +8,16 @@ import { mywork_data } from "../../Asset/mywork_data";
 import { FaArrowRight } from "react-icons/fa";
 
 const MyWork = () => {
+  const [visibleProduct, setvisibleProduct] = useState(3);
+
+  const handleClick = () => {
+    setvisibleProduct((prev) => prev + 3);
+  };
+
+  const handleShowLess = () => {
+    setvisibleProduct((prev) => prev - 3);
+  };
+
   return (
     <div id="mywork" className={Style.mywork}>
       <div className={Style.mywork_title}>
@@ -24,7 +34,7 @@ const MyWork = () => {
         />
       </div>
       <div className={Style.mywork_container}>
-        {mywork_data.map((mywork, index) => {
+        {mywork_data.slice(0, visibleProduct).map((mywork, index) => {
           return (
             <>
               <div
@@ -50,7 +60,11 @@ const MyWork = () => {
         })}
       </div>
       <div className={Style.mywork_showmore}>
-        <p>Show More</p>
+        {visibleProduct > 5 ? (
+          <p onClick={handleShowLess}>Show Less</p>
+        ) : (
+          <p onClick={handleClick}>Show More</p>
+        )}
         <FaArrowRight />
       </div>
     </div>
