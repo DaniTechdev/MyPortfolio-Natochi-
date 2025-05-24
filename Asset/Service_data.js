@@ -18,9 +18,9 @@ export const Services_Data = [
   },
   {
     S_no: "04",
-    s_name: "AI + Blockchain Solutions",
+    s_name: "Web2 to Web3 Migration",
     s_description:
-      "Intelligent contract automation and AI-enhanced Web3 applications",
+      "Modernize traditional applications with blockchain technology",
   },
   {
     S_no: "05",
@@ -30,15 +30,15 @@ export const Services_Data = [
   },
   {
     S_no: "06",
-    s_name: "Web2 to Web3 Migration",
-    s_description:
-      "Modernize traditional applications with blockchain technology",
-  },
-  {
-    S_no: "07",
     s_name: "Tokenomics & DAOs",
     s_description:
       "Design and implementation of token systems and governance models",
+  },
+  {
+    S_no: "07",
+    s_name: "AI + Blockchain Solutions",
+    s_description:
+      "Intelligent contract automation and AI-enhanced Web3 applications",
   },
   {
     S_no: "08",
