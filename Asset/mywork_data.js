@@ -55,7 +55,7 @@ export const mywork_data = [
 
   {
     w_no: 7,
-    w_name: "AI Image Generator",
+    w_name: "AI Image Generator(Web2 + Ai)",
     // w_img: "/managerproject.svg",
     alt: "token ico  image",
     w_img: "/nft.svg",
@@ -63,7 +63,7 @@ export const mywork_data = [
 
   {
     w_no: 6,
-    w_name: "Eccomerce (Web2 solution)",
+    w_name: "Eccomerce (Web2 solution + Ai)",
     // w_img: "/managerproject.svg",
     alt: "token ico  image",
     w_img: "/nft.svg",
