@@ -32,6 +32,13 @@ export const mywork_data = [
     w_img: "/nft.svg",
   },
   {
+    w_no: 6,
+    w_name: "DECENTRALISED VOTING SYSTEM(Blockchain",
+    // w_img: "/managerproject.svg",
+    alt: "token ico  image",
+    w_img: "/nft.svg",
+  },
+  {
     w_no: 5,
     w_name: "Staking Dapp(Blockchain)",
     // w_img: "/managerproject.svg",
