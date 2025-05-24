@@ -33,16 +33,27 @@ const About = () => {
             data-aos-duration="2000"
           >
             <p>
-              As a blockchain developer with over 7 years of blockchain
-              knowledge and 3+ years of hands-on technical experience, I've
-              dedicated my career to building scalable blockchain applications
-              that solve real-world problems.
-            </p>
+              {" "}
+              I'm a full-stack blockchain developer with 6+ years of deep
+              blockchain expertise and 3 years of hands-on technical experience.
+              I specialize in building secure, AI-enhanced Web3 solutions—from
+              smart contracts to full-stack dApps—that bridge traditional
+              systems with decentralized technology.{" "}
+            </p>{" "}
             <p>
-              When I'm not coding, I stay at the forefront of blockchain
-              innovation through continuous learning, participating in
-              hackathons, and contributing to open-source projects in the
-              blockchain community.
+              {" "}
+              Beyond development, I offer strategic consulting to help
+              businesses navigate Web3 integration, tokenomics, and blockchain
+              security. My portfolio includes NFT marketplaces, DeFi protocols,
+              and enterprise-grade Web2-to-Web3 migrations, all designed with
+              scalability and real-world utility in mind.{" "}
+            </p>{" "}
+            <p>
+              {" "}
+              When I’m not coding, I contribute to open-source projects, audit
+              smart contracts, and explore AI/blockchain convergence to stay
+              ahead of industry shifts. Let’s build the future—one secure,
+              efficient block at a time.{" "}
             </p>
           </div>{" "}
           <div
