@@ -63,9 +63,11 @@ const MyWork = () => {
         {visibleProduct > 5 ? (
           <p onClick={handleShowLess}>Show Less</p>
         ) : (
-          <p onClick={handleClick}>Show More</p>
+          <>
+            <p onClick={handleClick}>Show More</p>
+            <FaArrowRight />
+          </>
         )}
-        <FaArrowRight />
       </div>
     </div>
   );
