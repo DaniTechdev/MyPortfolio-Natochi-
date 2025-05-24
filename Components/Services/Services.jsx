@@ -30,10 +30,10 @@ const Services = () => {
               <h3>{service.S_no}</h3>
               <h2>{service.s_name}</h2>
               <p>{service.s_description}</p>
-              <div className={Style.services_readmore}>
+              {/* <div className={Style.services_readmore}>
                 <p>Read More</p>
                 <FaArrowRight className={Style.services_icon} />
-              </div>
+              </div> */}
             </div>
           );
         })}

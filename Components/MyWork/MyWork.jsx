@@ -8,7 +8,7 @@ import { mywork_data } from "../../Asset/mywork_data";
 import { FaArrowRight } from "react-icons/fa";
 
 const MyWork = () => {
-  const [visibleProduct, setvisibleProduct] = useState(3);
+  const [visibleProduct, setvisibleProduct] = useState(5);
 
   const handleClick = () => {
     setvisibleProduct((prev) => prev + 3);
