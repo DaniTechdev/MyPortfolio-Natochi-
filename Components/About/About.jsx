@@ -66,7 +66,7 @@ const About = () => {
               <hr style={{ width: "48%" }} />
             </div>
             <div className={Style.about_skill}>
-              <p>React & NextJs</p>
+              <p>React & NextJs & ReduxToolkit</p>
               <hr style={{ width: "49%" }} />
             </div>
             <div className={Style.about_skill}>
