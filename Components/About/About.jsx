@@ -83,10 +83,7 @@ const About = () => {
               <p>Solana Anchor/Rust</p>
               <hr style={{ width: "55%" }} />
             </div>
-            <div className={Style.about_skill}>
-              <p></p>
-              <hr style={{ width: "61%" }} />
-            </div>
+
             <div className={Style.about_skill}>
               <p>
                 Hardhat & <br />
@@ -135,6 +132,12 @@ const About = () => {
               <p>Solidity</p>
               <div className={Style.horidiv}>
                 <hr style={{ width: "75%" }} />
+              </div>
+            </div>
+            <div className={Style.about_skill_mob}>
+              <p>Solana Anchor/Rust</p>
+              <div className={Style.horidiv}>
+                <hr style={{ width: "60%" }} />
               </div>
             </div>
             <div className={Style.about_skill_mob}>
