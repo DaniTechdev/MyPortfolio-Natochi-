@@ -120,7 +120,7 @@ const About = () => {
               </div>
             </div>
             <div className={Style.about_skill_mob}>
-              <p>React & NextJs</p>
+              <p>React & NextJs & ReduxToolkit</p>
               <div className={Style.horidiv}>
                 <hr style={{ width: "67%" }} />
               </div>
