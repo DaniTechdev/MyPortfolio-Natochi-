@@ -80,16 +80,20 @@ const About = () => {
             </div>
 
             <div className={Style.about_skill}>
-              <p>Solana Anchor/Rust</p>
-              <hr style={{ width: "55%" }} />
-            </div>
-
-            <div className={Style.about_skill}>
               <p>
                 Hardhat & <br />
                 Ether.js{" "}
               </p>
               <hr style={{ width: "54%" }} />
+            </div>
+            <div className={Style.about_skill}>
+              <p>Solana Anchor/Rust</p>
+              <hr style={{ width: "55%" }} />
+            </div>
+
+            <div className={Style.about_skill}>
+              <p>Solana/Ether.js</p>
+              <hr style={{ width: "55%" }} />
             </div>
             <div className={Style.about_skill}>
               <p>Tokenomics Design </p>
@@ -135,15 +139,21 @@ const About = () => {
               </div>
             </div>
             <div className={Style.about_skill_mob}>
+              <p>Hardhat & Ether.js </p>
+              <div className={Style.horidiv}>
+                <hr style={{ width: "55%" }} />
+              </div>
+            </div>
+            <div className={Style.about_skill_mob}>
               <p>Solana Anchor/Rust</p>
               <div className={Style.horidiv}>
                 <hr style={{ width: "60%" }} />
               </div>
             </div>
             <div className={Style.about_skill_mob}>
-              <p>Hardhat & Ether.js </p>
+              <p>Solana/Ether.js</p>
               <div className={Style.horidiv}>
-                <hr style={{ width: "55%" }} />
+                <hr style={{ width: "60%" }} />
               </div>
             </div>
             <div className={Style.about_skill_mob}>
@@ -173,7 +183,7 @@ const About = () => {
         <hr />
         <div className={Style.about_ahcievement}>
           <h1> 3+</h1>
-          <p> YEARS OF BLOCHCHAIN DEVELOPEMENT</p>
+          <p> YEARS OF BLOCHCHAIN AND FULL-STACK DEVELOPEMENT</p>
         </div>
         <hr />
         <div className={Style.about_ahcievement}>
