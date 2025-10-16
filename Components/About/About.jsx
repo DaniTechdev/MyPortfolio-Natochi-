@@ -75,7 +75,7 @@ const About = () => {
             </div>
 
             <div className={Style.about_skill}>
-              <p>Solidity</p>
+              <p>Solidity for Evm chains</p>
               <hr style={{ width: "61%" }} />
             </div>
 
