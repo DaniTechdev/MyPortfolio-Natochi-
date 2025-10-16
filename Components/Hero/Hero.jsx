@@ -24,7 +24,8 @@ const Hero = () => {
       <img className={Style.profilePic} src="/myprofile.jpg" alt=" profile" />
       <h1>
         <span>
-          I'm Nneji Tochi, Natochi, Blockchain developer from Nigeria{" "}
+          I'm Nneji Tochi, Natochi, Blockchain and full-stack developer from
+          Nigeria{" "}
         </span>
       </h1>
       <h2>

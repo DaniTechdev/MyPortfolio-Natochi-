@@ -34,11 +34,11 @@ const About = () => {
           >
             <p>
               {" "}
-              I'm a full-stack blockchain developer with 6+ years of deep
-              blockchain expertise and 3 years of hands-on technical experience.
-              I specialize in building secure, AI-enhanced Web3 solutions—from
-              smart contracts to full-stack dApps—that bridge traditional
-              systems with decentralized technology.{" "}
+              I'm a full-stack blockchain and full-stack developer with 6+ years
+              of deep blockchain expertise and 3 years of hands-on technical
+              experience. I specialize in building secure, AI-enhanced Web3
+              solutions—from smart contracts to full-stack dApps—that bridge
+              traditional systems with decentralized technology.{" "}
             </p>{" "}
             <p>
               {" "}
@@ -76,6 +76,15 @@ const About = () => {
 
             <div className={Style.about_skill}>
               <p>Solidity</p>
+              <hr style={{ width: "61%" }} />
+            </div>
+
+            <div className={Style.about_skill}>
+              <p>Solana Anchor/Rust</p>
+              <hr style={{ width: "55%" }} />
+            </div>
+            <div className={Style.about_skill}>
+              <p></p>
               <hr style={{ width: "61%" }} />
             </div>
             <div className={Style.about_skill}>

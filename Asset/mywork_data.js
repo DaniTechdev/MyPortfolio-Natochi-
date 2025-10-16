@@ -19,13 +19,20 @@ export const mywork_data = [
   },
   {
     w_no: 3,
-    w_name: "SUPPLY CHAIN MANAGEMENT(Blockchain)",
+    w_name: "Full-Stack-Ecommerce-app-MERN",
     // w_img: "/managerproject.svg",
     alt: "staff management image",
     w_img: "/nft.svg",
   },
   {
     w_no: 4,
+    w_name: "SUPPLY CHAIN MANAGEMENT(Blockchain)",
+    // w_img: "/managerproject.svg",
+    alt: "staff management image",
+    w_img: "/nft.svg",
+  },
+  {
+    w_no: 5,
     w_name: "Token ICO Marketplace(Blockchain)",
     // w_img: "/managerproject.svg",
     alt: "token ico  image",
@@ -39,14 +46,14 @@ export const mywork_data = [
     w_img: "/nft.svg",
   },
   {
-    w_no: 5,
+    w_no: 7,
     w_name: "Staking Dapp(Blockchain)",
     // w_img: "/managerproject.svg",
     alt: "Staking dapp image",
     w_img: "/nft.svg",
   },
   {
-    w_no: 6,
+    w_no: 8,
     w_name: "EtherScan Clone(Web2 + Blockchain)",
     // w_img: "/managerproject.svg",
     alt: "token ico  image",
@@ -54,7 +61,7 @@ export const mywork_data = [
   },
 
   {
-    w_no: 7,
+    w_no: 9,
     w_name: "AI Image Generator(Web2 + Ai)",
     // w_img: "/managerproject.svg",
     alt: "token ico  image",
@@ -62,7 +69,7 @@ export const mywork_data = [
   },
 
   {
-    w_no: 6,
+    w_no: 10,
     w_name: "Eccomerce (Web2 solution + Ai)",
     // w_img: "/managerproject.svg",
     alt: "token ico  image",

@@ -13,35 +13,41 @@ export const Services_Data = [
   },
   {
     S_no: "03",
-    s_name: "Web3 API Integration",
-    s_description: "Seamless blockchain connectivity for your applications",
+    s_name: "Custom Web app solutions",
+    s_description: "Tailored web2 applications with intuitive user interfaces",
   },
   {
     S_no: "04",
+    s_name: "web2 and Web3 API Integration",
+    s_description:
+      "Seamless  app and dapp blockchain connectivity for your applications",
+  },
+  {
+    S_no: "05",
     s_name: "Web2 to Web3 Migration",
     s_description:
       "Modernize traditional applications with blockchain technology",
   },
   {
-    S_no: "05",
+    S_no: "06",
     s_name: "Blockchain Security",
     s_description:
       "Comprehensive audits and penetration testing for your Web3 projects",
   },
   {
-    S_no: "06",
+    S_no: "07",
     s_name: "Tokenomics & DAOs",
     s_description:
       "Design and implementation of token systems and governance models",
   },
   {
-    S_no: "07",
+    S_no: "08",
     s_name: "AI + Blockchain Solutions",
     s_description:
       "Intelligent contract automation and AI-enhanced Web3 applications",
   },
   {
-    S_no: "08",
+    S_no: "09",
     s_name: "Blockchain Automation",
     s_description: "Smart contract optimization and self-executing solutions",
   },
