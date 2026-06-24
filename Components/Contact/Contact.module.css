@@ -16,33 +16,32 @@
 
 .contact_title {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .contact_title h1 {
+  position: relative;
+  z-index: 1;
   padding: 0px 30px;
   font-size: 80px;
   font-weight: 600;
 }
 
 .contact_title img {
-  width: 150px;
-  height: 150px;
   position: absolute;
-  top: -55px;
-  /* bottom: 0; */
-  right: 4px;
-  /* z-index: -1; */
-  width: 150px;
-  height: 150px;
+  top: -52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 72px;
+  opacity: 0.95;
+  pointer-events: none;
 }
 
 .contact_section {
   display: flex;
   gap: 150px;
-}
-.contact_title img {
-  width: 150px;
-  height: 150px;
 }
 
 .contact_left {
@@ -85,7 +84,7 @@
 .contact_right {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 30px;
 }
 
@@ -221,7 +220,7 @@
   .contact_right {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 20px;
     width: 100%;
     padding: 0 40px;
@@ -270,15 +269,9 @@
   }
 
   .contact_title img {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: -85px;
-    /* bottom: 0; */
-    right: -15px;
-    /* z-index: -1; */
-    width: 150px;
-    height: 150px;
+    top: -36px;
+    width: 52px;
+    height: 52px;
   }
 
   .contact_section {
@@ -369,7 +362,7 @@
   .contact_right {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 20px;
   }
   .contact_right label {
