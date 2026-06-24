@@ -9,10 +9,11 @@ import Style from "./Hero.module.css";
 const Hero = () => {
   const [text] = useTypewriter({
     words: [
+      "Full-Stack Developer",
+      "Web2 & Web3 Engineer",
       "Blockchain Developer",
+      "MERN Stack Developer",
       "Smart Contract Engineer",
-      "Full-Stack Web3 Developer",
-      "Solidity • Rust • Move",
     ],
     loop: 0,
     typeSpeed: 70,
@@ -35,8 +36,8 @@ const Hero = () => {
       </p>
 
       <h1 data-aos="fade-up" data-aos-duration="1000">
-        <span>I build secure, AI-enhanced Web3</span> products across EVM, Solana
-        &amp; Sui.
+        <span>I build secure, AI-enhanced products</span> across Web2 &amp; Web3,
+        from full-stack apps to smart contracts.
       </h1>
 
       <h2 aria-live="polite">
@@ -50,10 +51,10 @@ const Hero = () => {
         data-aos="fade-up"
         data-aos-duration="1200"
       >
-        Blockchain &amp; Full-Stack Developer with 7+ years of blockchain
-        knowledge and 3+ years of hands-on experience. I ship smart contracts,
-        DeFi protocols, and full-stack dApps that bridge traditional systems
-        with decentralized technology.
+        Full-Stack &amp; Blockchain Developer with 7+ years in tech and 3+ years
+        of hands-on experience. I build everything from MERN/Next.js web apps and
+        APIs to smart contracts, DeFi protocols and dApps, bridging traditional
+        systems with decentralized technology.
       </p>
 
       <div

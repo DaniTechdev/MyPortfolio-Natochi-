@@ -82,8 +82,7 @@ const Skills = () => {
       </div>
 
       <p className={Style.skills_subtitle}>
-        The technologies I use to design, build and ship across EVM, Solana
-        &amp; Sui.
+        The technologies I use to design, build and ship across Web2 and Web3.
       </p>
 
       <div className={Style.skills_groups}>

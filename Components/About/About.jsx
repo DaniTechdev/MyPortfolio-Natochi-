@@ -31,11 +31,10 @@ const About = () => {
             data-aos-duration="2000"
           >
             <p>
-              I'm a Blockchain &amp; Full-Stack Developer with 7+ years of
-              blockchain knowledge and 3+ years of hands-on technical
-              experience. I specialize in building secure, AI-enhanced Web3
-              solutions, from smart contracts to full-stack dApps, that bridge
-              traditional systems with decentralized technology.
+              I'm a Full-Stack &amp; Blockchain Developer with 7+ years in tech
+              and 3+ years of hands-on technical experience. I build across both
+              Web2 and Web3, from responsive web apps, APIs and MERN/Next.js
+              platforms to secure, AI-enhanced smart contracts and dApps.
             </p>
             <p>
               I work across EVM (Solidity), Solana (Rust/Anchor) and Sui (Move),
@@ -82,7 +81,7 @@ const About = () => {
       >
         <div className={Style.about_ahcievement}>
           <Counter end={7} className={Style.counter} />
-          <p> YEARS OF BLOCKCHAIN KNOWLEDGE</p>
+          <p> YEARS IN TECH</p>
         </div>
         <hr />
         <div className={Style.about_ahcievement}>

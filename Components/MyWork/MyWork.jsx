@@ -41,8 +41,8 @@ const MyWork = () => {
       </div>
 
       <p className={Style.mywork_subtitle}>
-        A selection of blockchain and full-stack projects across EVM, Solana
-        &amp; Sui.
+        A selection of full-stack web and blockchain projects across Web2 and
+        Web3.
       </p>
 
       {/* Filter chips */}
