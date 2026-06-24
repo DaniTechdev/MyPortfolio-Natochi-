@@ -17,15 +17,15 @@ const Footer = () => {
             className={Style.footerlogo}
           />
           <p>
-            I am a blockchain developer, with over 7 years blockchain knowlegdge
-            and over 3 years technical experience in blockchain development, who
-            is passionation in building scalable blockchain applications.
+            I am a Blockchain &amp; Full-Stack Developer with 7+ years of
+            blockchain knowledge and 3+ years of hands-on experience, passionate
+            about building secure, scalable blockchain applications.
           </p>
         </div>
         <div className={Style.footer_top_right}>
           <div className={Style.footer_email_input}>
             <MdOutlineUnsubscribe style={{ width: "24px", height: "24px" }} />
-            <input type="email" placeholder="Enter your emaail" />
+            <input type="email" placeholder="Enter your email" />
           </div>
           <div className={Style.footer_subscribe}>Subscribe</div>
         </div>
@@ -33,7 +33,7 @@ const Footer = () => {
       <hr />
       <div className={Style.footer_bottom}>
         <p className={Style.footer_bottom_left}>
-          @ 2025 Nneji Tochi,Natochi. All Right Reserved
+          © 2026 Nneji Tochukwu (Natochi). All Rights Reserved.
         </p>
         <div className={Style.footer_bottm_right}>
           <p>Term of Service</p>

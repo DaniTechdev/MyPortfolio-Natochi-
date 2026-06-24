@@ -3,10 +3,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 30px;
   margin: 80px 0px;
   color: var(--text);
-  /* border: 1px solid blue; */
   width: 100%;
 }
 
@@ -25,198 +24,292 @@
   height: 150px;
   position: absolute;
   top: -79px;
-  /* bottom: 0; */
   right: 4px;
-  /* z-index: -1; */
-  width: 150px;
-  height: 150px;
 }
 
+.mywork_subtitle {
+  font-size: 20px;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 640px;
+  margin-top: -10px;
+  padding: 0 20px;
+}
+
+/* ---------- Filter chips ---------- */
+.filter_bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 10px 0 20px;
+  padding: 0 20px;
+}
+
+.filter_chip {
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: 1.5px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter_chip:hover {
+  color: var(--text);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.filter_chip_active {
+  background: var(--gradient-primary);
+  color: var(--button-text);
+  border-color: transparent;
+}
+
+.filter_chip:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ---------- Grid ---------- */
 .mywork_container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.work_card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px var(--card-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.work_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 44px var(--card-shadow), 0 0 28px var(--glow-soft);
+  border-color: var(--primary);
+}
+
+/* ---------- Thumbnail ---------- */
+.card_thumb {
+  position: relative;
+  height: 170px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  width: 90%;
-  /* border: 1px solid red; */
+  overflow: hidden;
 }
 
-.work_container {
-  box-sizing: border-box;
-  transition: 0.3s;
-  cursor: pointer;
-  width: fit-content;
-  margin: 50px 0px;
-}
-.mywork_img {
-  width: 300px;
-  height: 180px;
+.card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.work_container:hover {
-  transform: scale(1.1);
-  border: 4px solid rgb(27, 111, 147);
-  border-radius: 10px;
+.work_card:hover .card_img {
+  transform: scale(1.06);
 }
 
-/* .mywork_btn button {
-  background-color: #4caf50;
-} */
-.mywork_btn button {
-  padding: 3px 0px;
-  border-radius: 10px;
-  background: var(--gradient-primary);
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.5s;
-  padding: 4px 8px;
-  border: none;
+.card_thumb_icon {
+  font-size: 54px;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.mywork_btn button {
-  transform: scale(1.05);
-  background: var(--gradient-highlight);
-  color: var(--text);
-}
-
-.desc_box {
-  text-align: center;
-}
-
-.desc_box h2 {
-  color: var(--text);
-}
-
-.mywork_showmore {
-  display: flex;
-  gap: 15px;
+.featured_badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffd700;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
   border-radius: 50px;
-  border: 2px solid white;
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 80px;
-  padding: 30px 60px;
-  transition: 0.6s;
-  cursor: pointer;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+/* ---------- Body ---------- */
+.card_body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  flex: 1;
+}
+
+.card_title {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.card_desc {
+  font-size: 15px;
+  line-height: 23px;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.tag_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid;
+  background: rgba(127, 127, 127, 0.08);
+}
+
+/* ---------- Actions ---------- */
+.card_actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.btn_demo,
+.btn_github {
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
-.mywork_showmore:hover {
-  gap: 30px;
-  transition: 0.6s;
+.btn_demo {
+  background: var(--gradient-primary);
+  color: var(--button-text);
 }
 
+.btn_github {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--primary);
+}
+
+.btn_demo:hover,
+.btn_github:hover {
+  transform: translateY(-2px);
+}
+
+.btn_github:hover {
+  background: var(--primary);
+  color: var(--button-text);
+}
+
+.btn_demo:focus-visible,
+.btn_github:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.no_results {
+  color: var(--text-secondary);
+  font-size: 18px;
+  margin: 20px 0 40px;
+}
+
+/* ---------- Show more ---------- */
+.mywork_showmore {
+  margin: 20px 0 80px;
+}
+
+.mywork_showmore button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 44px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mywork_showmore button:hover {
+  background: var(--primary);
+  color: var(--button-text);
+  transform: translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
 @media (max-width: 1025px) {
-  .mywork {
-    gap: 50px;
-
-    width: 100%;
-    margin: 80px 0px;
-  }
-  .mywork_img {
-    width: 280px;
-    height: 200px;
-    box-sizing: border-box;
-    transition: 0.3s;
-    cursor: pointer;
-    margin: 50px 0px;
+  .mywork_container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 92%;
   }
 }
+
 @media (max-width: 768px) {
   .mywork {
-    gap: 50px;
-    /* margin: 50px 70px; */
-    /* align-items: start; */
-    width: 100%;
-    margin: 80px 10px;
+    gap: 25px;
+    margin: 60px 10px;
   }
 
   .mywork_title h1 {
     padding: 0;
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 44px;
   }
 
   .themepattermImg {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: -88px;
-    /* bottom: 0; */
-    right: -20px;
-    /* z-index: -1; */
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
+    top: -60px;
+    right: -10px;
+  }
+
+  .mywork_subtitle {
+    font-size: 16px;
   }
 
   .mywork_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    width: 90%;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 92%;
   }
-  .mywork_img {
-    width: 130px;
-    height: 150px;
-    box-sizing: border-box;
-    transition: 0.3s;
-    cursor: pointer;
-    margin-top: 30px;
-  }
-  /* .mywork_img:hover {
-    transform: scale(1.05);
-    border: 4px solid rgb(27, 111, 147);
-    border-radius: 10px;
-  } */
 
-  .mywork_showmore {
-    padding: 20px 40px;
+  .card_title {
     font-size: 18px;
-    margin: 50px auto;
-    cursor: pointer;
-  }
-  .mywork_img {
-    width: 350px;
-    height: 220px;
-    box-sizing: border-box;
-    transition: 0.3s;
-    cursor: pointer;
   }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 560px) {
   .mywork_container {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 120px;
-  }
-  .mywork_img {
-    width: 100%;
-    height: fit-content;
-    max-height: 220px;
-    box-sizing: border-box;
-    transition: 0.3s;
-    cursor: pointer;
-    margin-top: 0px;
-    z-index: -20;
-  }
-  .mywork_title h1 {
-    padding: 0;
-    font-size: 30px;
-    font-weight: 600;
+    gap: 26px;
+    width: 88%;
   }
 
-  .themepattermImg {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: -90px;
-    /* bottom: 0; */
-    right: -20px;
-    /* z-index: -1; */
-    width: 150px;
-    height: 150px;
+  .mywork_title h1 {
+    font-size: 34px;
   }
 }

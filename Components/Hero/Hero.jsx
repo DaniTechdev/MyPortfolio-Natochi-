@@ -1,53 +1,80 @@
 "use client";
 
 import React from "react";
-// import { Typewriter, useTypewriter } from "react-simple-typewriter";
-import { useTypewriter } from "react-simple-typewriter";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 //Internal import
 import Style from "./Hero.module.css";
 
 const Hero = () => {
-  const [text, helper] = useTypewriter({
+  const [text] = useTypewriter({
     words: [
       "Blockchain Developer",
-      "Web3 Developer",
-      "Smart Contract Developer",
+      "Smart Contract Engineer",
+      "Full-Stack Web3 Developer",
+      "Solidity • Rust • Move",
     ],
     loop: 0,
     typeSpeed: 70,
     deleteSpeed: 50,
-    delaySpeed: 1000,
+    delaySpeed: 1500,
   });
+
   return (
-    <div id="home" className={Style.hero}>
-      <img className={Style.profilePic} src="/myprofile.jpg" alt=" profile" />
-      <h1>
-        <span>
-          I'm Nneji Tochi, Natochi, Blockchain and full-stack developer from
-          Nigeria{" "}
-        </span>
-      </h1>
-      <h2>
-        <span>A {""}</span>
-        {text}
-      </h2>
-      <p data-aos="fade-up" data-aos-duration="2000">
-        I am a blockchain developer, with over 7 years blockchain knowledge and
-        over 3 years technical experience in blockchain development, who is
-        passionate in building scalable blockchain applications.
+    <section id="home" className={Style.hero} aria-label="Introduction">
+      <img
+        className={Style.profilePic}
+        src="/myprofile.jpg"
+        alt="Nneji Daniel Tochukwu (Natochi), Blockchain and Full-Stack Developer"
+        data-aos="zoom-in"
+        data-aos-duration="1200"
+      />
+
+      <p className={Style.eyebrow} data-aos="fade-up" data-aos-duration="800">
+        Hi, I&apos;m Nneji Daniel Tochukwu, <span>Natochi</span>
       </p>
-      <div className={Style.hero_action}>
-        <div
-          className={Style.hero_connect}
-          data-aos="flip-left"
-          data-aos-duration="2000"
+
+      <h1 data-aos="fade-up" data-aos-duration="1000">
+        <span>I build secure, AI-enhanced Web3</span> products across EVM, Solana
+        &amp; Sui.
+      </h1>
+
+      <h2 aria-live="polite">
+        <span className={Style.iam}>I&apos;m a </span>
+        <span className={Style.typed}>{text}</span>
+        <Cursor cursorColor="var(--primary)" />
+      </h2>
+
+      <p
+        className={Style.tagline}
+        data-aos="fade-up"
+        data-aos-duration="1200"
+      >
+        Blockchain &amp; Full-Stack Developer with 7+ years of blockchain
+        knowledge and 3+ years of hands-on experience. I ship smart contracts,
+        DeFi protocols, and full-stack dApps that bridge traditional systems
+        with decentralized technology.
+      </p>
+
+      <div
+        className={Style.hero_action}
+        data-aos="fade-up"
+        data-aos-duration="1400"
+      >
+        <a href="#mywork" className={Style.hero_connect}>
+          View My Work
+        </a>
+        <a
+          href="/resume.pdf"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          className={Style.hero_resume}
         >
-          <a href="#contact">Connect with me</a>
-        </div>
-        <div className={Style.hero_resume}>My Resume</div>
+          Download Resume
+        </a>
       </div>
-    </div>
+    </section>
   );
 };
 

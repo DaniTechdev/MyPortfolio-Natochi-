@@ -10,71 +10,128 @@
 
 .profilePic {
   margin-top: 150px;
-  width: 360px;
-  height: 360px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 0 8px var(--glow-soft), 0 18px 50px var(--glow-color);
+  animation: float 6s ease-in-out infinite;
+}
+
+.eyebrow {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  margin-top: -10px;
+}
+
+.eyebrow span {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .hero h1 {
   text-align: center;
   width: 70%;
-  font-size: 50px;
-  font-weight: 600;
-  color: white;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text);
 }
 
 .hero h1 span {
-  background: var(--gradient-primary);
+  background: var(--gradient-text);
+  background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
 }
 
 .hero h2 {
-  background: var(--gradient-primary);
+  font-size: 32px;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.hero h2 .iam {
+  color: var(--text);
+}
+
+.hero h2 .typed {
+  background: var(--gradient-text);
+  background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
 }
 
-.hero p {
-  width: 50%;
+.tagline {
+  width: 55%;
   text-align: center;
-  font-size: 24px;
-  line-height: 40px;
-  color: var(--text);
+  font-size: 20px;
+  line-height: 34px;
+  color: var(--text-secondary);
 }
 
 .hero_action {
   display: flex;
   align-items: center;
-  gap: 25px;
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.hero_connect,
+.hero_resume {
+  padding: 18px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--button-text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .hero_connect {
-  padding: 25px 45px;
-  border-radius: 50px;
   background: var(--gradient-primary);
-  cursor: pointer;
-  color: var(--text);
+  border: 2px solid transparent;
+  box-shadow: 0 8px 24px var(--glow-color);
 }
 
 .hero_resume {
-  padding: 25px 45px;
-  border-radius: 50px;
-  cursor: pointer;
-  border: 2px solid white;
+  background: transparent;
+  border: 2px solid var(--primary);
   color: var(--text);
 }
 
 .hero_connect:hover {
-  border: 2px solid white;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 38px var(--glow-color), 0 0 24px var(--glow-color);
 }
+
 .hero_resume:hover {
-  border-color: rgb(22, 46, 56);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px var(--glow-soft);
+}
+
+.hero_resume:hover {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--button-text);
+}
+
+.hero_connect:focus-visible,
+.hero_resume:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
 }
 
 @media (max-width: 768px) {
@@ -89,36 +146,41 @@
   }
   .profilePic {
     margin-top: 120px;
-    width: 260px;
+    width: 240px;
+    height: 240px;
+  }
+
+  .eyebrow {
+    font-size: 16px;
   }
 
   .hero h1 {
-    margin-top: 50px;
+    margin-top: 30px;
     width: 90%;
-    font-size: 50px;
+    font-size: 36px;
   }
 
-  .hero p {
-    width: 60%;
-    font-size: 18px;
-    line-height: 25px;
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .tagline {
+    width: 80%;
+    font-size: 16px;
+    line-height: 26px;
     margin: 10px 0px;
   }
 
   .hero_action {
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 500;
-    margin-bottom: 30px;
+    gap: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 40px;
   }
 
-  .hero_connect {
-    padding: 14px 20px;
-    border-radius: 40px;
-  }
-
+  .hero_connect,
   .hero_resume {
-    padding: 14px 20px;
+    padding: 14px 26px;
     border-radius: 40px;
   }
 }
@@ -138,8 +200,28 @@
   }
 
   .hero h1 {
-    margin-top: 30px;
-    width: 90%;
-    font-size: 30px;
+    margin-top: 20px;
+    width: 92%;
+    font-size: 28px;
+  }
+
+  .hero h2 {
+    font-size: 20px;
+  }
+
+  .tagline {
+    width: 88%;
+  }
+
+  .hero_action {
+    width: 88%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero_connect,
+  .hero_resume {
+    width: 100%;
+    padding: 15px 24px;
   }
 }

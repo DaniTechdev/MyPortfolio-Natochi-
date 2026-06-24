@@ -4,105 +4,211 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+/* Offset anchored sections so the sticky navbar doesn't cover their tops */
+section[id],
+div[id="home"],
+div[id="about"],
+div[id="services"],
+div[id="mywork"],
+div[id="contact"] {
+  scroll-margin-top: 110px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 a {
   text-decoration: none;
-  color: var(--t);
+  color: var(--text);
 }
 
-/* Dark Theme Color Palette based on rgb(22, 46, 56) */
+/* =====================================================================
+   DARK THEME: premium teal/cyan
+   ===================================================================== */
 :root[data-theme="dark"] {
-  /* Primary colors */
-  --background: #161512;
-  --text: #e4edf1;
-  --text-secondary: #a4bac6;
+  --background: #080d12;
+  --background-soft: #0d141b;
+  --text: #e8f1f6;
+  --text-secondary: #93a8b5;
 
-  /* Accent colors - based on rgb(22, 46, 56) [#162e38] */
-  --primary: #6ca2b9;
-  --primary-light: #1e3c4a;
-  --primary-lighter: #284c5c;
+  /* Brand accents */
+  --primary: #22d3ee;
+  --primary-light: #2dd4bf;
+  --accent: #22d3ee;
+  --accent-2: #2dd4bf;
 
-  /* Complementary accent */
-  --accent: #382e16;
-  --accent-light: #4a3c1e;
+  /* Glass surfaces — deeper, layered frosted look */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.55);
+  --glass-bg: rgba(12, 20, 28, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.06);
+  --menu-bg: rgba(9, 15, 21, 0.9);
 
-  /* Surface colors */
-  --card-bg: #122530;
-  --card-border: rgba(255, 255, 255, 0.04);
-  --card-shadow: rgba(0, 0, 0, 0.35);
+  /* Buttons: dark text on a bright cyan pill reads premium */
+  --button-primary: #22d3ee;
+  --button-text: #04141a;
 
-  /* Button colors */
-  --button-primary: #284c5c;
-  --button-text: #ffffff;
+  /* Glow */
+  --glow-color: rgba(34, 211, 238, 0.35);
+  --glow-soft: rgba(34, 211, 238, 0.18);
 
-  /* Gradient options */
-  --gradient-primary: linear-gradient(
-    267deg,
-    rgb(22, 46, 56),
-    rgb(6, 175, 248)
-  );
-  --gradient-vibrant: linear-gradient(135deg, #162e38 0%, #284c5c 100%);
-  --gradient-subtle: linear-gradient(135deg, #0c1a20 0%, #122530 100%);
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #0891b2 0%, #22d3ee 100%);
+  --gradient-vibrant: linear-gradient(135deg, #06b6d4 0%, #2dd4bf 100%);
+  --gradient-subtle: linear-gradient(135deg, #0d141b 0%, #0a1218 100%);
   --gradient-accent: linear-gradient(
     135deg,
-    #284c5c 0%,
-    #162e38 50%,
-    #0c1a20 100%
+    #22d3ee 0%,
+    #0891b2 50%,
+    #0a1218 100%
   );
+  --gradient-highlight: linear-gradient(135deg, #67e8f9 0%, #22d3ee 100%);
+  --gradient-text: linear-gradient(120deg, #22d3ee 0%, #2dd4bf 50%, #67e8f9 100%);
 
-  --gradient-highlight: linear-gradient(
-    267deg,
-    rgb(139, 194, 218),
-    rgb(22, 46, 56)
-  );
-
-  /* Section dividers */
-  --divider: rgba(255, 255, 255, 0.05);
+  --divider: rgba(255, 255, 255, 0.07);
 }
 
-/* White Theme Color Palette */
+/* =====================================================================
+   LIGHT THEME: crisp, high-contrast
+   ===================================================================== */
 :root[data-theme="light"] {
-  /* Primary colors */
-  --background: #dad4d4;
-  /* --text: #4479cd; */
-  --text: #4479cd;
-  --text-secondary: #555555;
+  --background: #f5f8fa;
+  --background-soft: #ffffff;
+  --text: #0f1e29;
+  --text-secondary: #51626e;
 
-  /* Accent colors */
-  --primary: rgb(185, 191, 193);
-  --primary-hover: #1a66ff;
-  --secondary: #8ecae6;
+  /* Brand accents (deeper for contrast on light) */
+  --primary: #0891b2;
+  --primary-light: #0e7490;
+  --accent: #0891b2;
+  --accent-2: #0d9488;
 
-  /* Surface colors */
-  --card-bg: #ffffff;
-  --card-border: rgba(0, 0, 0, 0.1);
-  --card-shadow: rgba(0, 0, 0, 0.05);
+  /* Glass surfaces — deeper, layered frosted look */
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(8, 145, 178, 0.16);
+  --card-shadow: rgba(15, 30, 41, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-border: rgba(8, 145, 178, 0.2);
+  --glass-highlight: rgba(255, 255, 255, 0.5);
+  --menu-bg: rgba(245, 248, 250, 0.85);
 
-  /* Button colors */
-  --button-primary: #3a86ff;
+  /* Buttons */
+  --button-primary: #0891b2;
   --button-text: #ffffff;
 
-  /* Gradient options */
-  /* --gradient-primary: linear-gradient(135deg, #c8cdd6 0%, #0aa7f6 100%); */
-  --gradient-primary: linear-gradient(
-    267deg,
-    rgb(22, 46, 56),
-    rgb(20, 78, 106)
-  );
-  --gradient-subtle: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  /* Glow */
+  --glow-color: rgba(8, 145, 178, 0.28);
+  --glow-soft: rgba(8, 145, 178, 0.14);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #0e7490 0%, #0891b2 100%);
+  --gradient-vibrant: linear-gradient(135deg, #0891b2 0%, #0d9488 100%);
+  --gradient-subtle: linear-gradient(135deg, #ffffff 0%, #eef4f7 100%);
   --gradient-accent: linear-gradient(
     135deg,
-    #3a86ff 0%,
-    #48cae4 50%,
-    #90e0ef 100%
+    #0891b2 0%,
+    #0e7490 50%,
+    #155e75 100%
   );
-  --gradient-highlight: linear-gradient(135deg, #3a86ff 0%, #8ecae6 100%);
+  --gradient-highlight: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  --gradient-text: linear-gradient(120deg, #0e7490 0%, #0d9488 50%, #0891b2 100%);
 
-  /* Section dividers */
-  --divider: rgba(0, 0, 0, 0.08);
+  --divider: rgba(15, 30, 41, 0.08);
 }
 
 body {
   background-color: var(--background);
-  /* color: var(--text); */
-  transition: all 0.3s ease;
+  color: var(--text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Subtle ambient radial glows behind the whole page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 15% 12%,
+      var(--glow-soft) 0%,
+      transparent 38%
+    ),
+    radial-gradient(circle at 85% 80%, var(--glow-soft) 0%, transparent 40%);
+}
+
+/* Selection + scrollbar polish */
+::selection {
+  background: var(--primary);
+  color: var(--button-text);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* =====================================================================
+   Reusable animation keyframes (Polished & professional)
+   ===================================================================== */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--glow-soft);
+  }
+  50% {
+    box-shadow: 0 0 36px 6px var(--glow-color);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,5 +1,7 @@
 .footer {
   margin: 50px 170px;
+  padding-top: 40px;
+  border-top: 1px solid var(--divider);
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -12,8 +14,8 @@
 }
 
 .footerlogo {
-  width: 150px;
-  height: 150px;
+  width: 96px;
+  height: 96px;
 }
 
 .footer_top_left p {
@@ -32,35 +34,37 @@
   gap: 30px;
   padding: 20px 30px;
   border-radius: 50px;
-  background: rgb(22, 46, 56);
+  background: var(--background-soft);
+  border: 1px solid var(--card-border);
   padding-right: 80px;
 }
 
 .footer_email_input:hover {
-  border: 2px solid white;
+  border-color: var(--primary);
 }
 
 .footer_email_input input {
   outline: none;
   border: none;
   background: transparent;
-  color: rgb(166, 159, 159);
+  color: var(--text-secondary);
   font-size: 18px;
 }
 
 .footer_subscribe {
   font-size: 20px;
+  font-weight: 600;
   padding: 20px 30px;
   border-radius: 50px;
-  background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+  background: var(--gradient-primary);
   cursor: pointer;
-  transition: 0.3s;
-  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--button-text);
 }
 
 .footer_subscribe:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px var(--glow-color);
 }
 
 .footer_bottom {
@@ -100,7 +104,8 @@
     gap: 5px;
     padding: 20px 20px;
     border-radius: 50px;
-    background: rgb(22, 46, 56);
+    background: var(--background-soft);
+  border: 1px solid var(--card-border);
     padding-right: 80px;
   }
   .footer_top_right {
@@ -131,14 +136,15 @@
     gap: 10px;
     padding: 20px 30px;
     border-radius: 50px;
-    background: rgb(22, 46, 56);
+    background: var(--background-soft);
+  border: 1px solid var(--card-border);
     padding-right: 10px;
   }
   .footer_email_input input {
     outline: none;
     border: none;
     background: transparent;
-    color: rgb(166, 159, 159);
+    color: var(--text-secondary);
     font-size: 12px;
   }
   .footer_top_right {
@@ -156,21 +162,22 @@
     gap: 2px;
     padding: 10px 30px;
     border-radius: 50px;
-    background: rgb(22, 46, 56);
+    background: var(--background-soft);
+  border: 1px solid var(--card-border);
     padding-right: 10px;
   }
   .footer_email_input input {
     outline: none;
     border: none;
     background: transparent;
-    color: rgb(166, 159, 159);
+    color: var(--text-secondary);
     font-size: 10px;
   }
   .footer_subscribe {
     font-size: 10px;
     padding: 10px 30px;
     border-radius: 50px;
-    background: linear-gradient(267deg, rgb(22, 46, 56), rgb(139, 194, 218));
+    background: var(--gradient-primary);
     cursor: pointer;
     transition: 0.3s;
   }
