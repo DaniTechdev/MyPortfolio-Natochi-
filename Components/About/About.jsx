@@ -65,7 +65,7 @@ const About = () => {
             <ul className={Style.cred_list}>
               <li>
                 🎓 First-Class B.Sc. in Industrial Mathematics &amp; Applied
-                Statistics (4.66/5.00)
+                Statistics
               </li>
               <li>
                 📄 Two peer-reviewed publications in mathematical &amp;
