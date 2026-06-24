@@ -42,3 +42,9 @@ typechain-types
 cache
 artifacts
 
+
+# local debug artifacts
+dev_server*.log
+emu_*.png
+m_*.png
+mobile_*.png

@@ -1,151 +1,169 @@
 "use client";
 
-import React, { useRef, useState, useContext } from "react";
-import { MdOutlineMenuOpen } from "react-icons/md";
-import { FaWindowClose } from "react-icons/fa";
-import { MdOutlineWbSunny } from "react-icons/md";
-import { MdSunny } from "react-icons/md";
+import React, { useState, useContext, useEffect } from "react";
+import { MdOutlineWbSunny, MdSunny } from "react-icons/md";
 
 //Internal import
 import { ThemeContext } from "../../Context/themecontext";
 import Style from "./Navbar.module.css";
 
+const NAV_ITEMS = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About Me" },
+  { id: "skills", label: "Skills" },
+  { id: "services", label: "Service" },
+  { id: "mywork", label: "Portfolio" },
+  { id: "contact", label: "Contact" },
+];
+
 const Navbar = () => {
-  const { text, toggleTheme, theme } = useContext(ThemeContext);
+  const { toggleTheme, theme } = useContext(ThemeContext);
 
-  const [menu, setMenu] = useState("home");
-  const menuRef = useRef();
+  const [activeSection, setActiveSection] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const openMenu = () => {
-    menuRef.current.style.right = "0px";
-    menuRef.current.style.transition = "all 0.5s ease-in-out";
+  // Scroll-spy: highlight the nav item for whichever section is in view.
+  useEffect(() => {
+    const sections = NAV_ITEMS.map((item) =>
+      document.getElementById(item.id)
+    ).filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      // Trigger when a section crosses the upper-middle band of the viewport.
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  // Lock body scroll + close on Escape while the mobile drawer is open.
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [menuOpen]);
+
+  const handleNavClick = (id) => {
+    setActiveSection(id);
+    setMenuOpen(false);
   };
 
-  const closeMenu = () => {
-    menuRef.current.style.right = "-400px";
-    menuRef.current.style.transition = "all 0.5s ease-in-out";
-  };
-
-  const handleMenuClick = (menuName) => {
-    setMenu(menuName);
-  };
   return (
-    <div className={Style.Navbar}>
-      <img
-        className={Style.brand_nameimg}
-        src="/Natochi-logo1.svg"
-        alt=" natochi logo"
+    <nav className={Style.Navbar} aria-label="Main navigation">
+      <a href="#home" aria-label="Go to top" className={Style.brand}>
+        <img
+          className={Style.brand_nameimg}
+          src="/Natochi-logo1.svg"
+          alt="Natochi logo"
+        />
+      </a>
+
+      {/* Desktop nav links */}
+      <ul className={Style.nav_menu_desktop}>
+        {NAV_ITEMS.map((item) => (
+          <li key={item.id} onClick={() => handleNavClick(item.id)}>
+            <a
+              href={`#${item.id}`}
+              aria-current={activeSection === item.id ? "true" : undefined}
+            >
+              <p>{item.label}</p>
+            </a>
+            {activeSection === item.id && (
+              <span className={Style.activeDot} aria-hidden="true" />
+            )}
+          </li>
+        ))}
+      </ul>
+
+      <div className={Style.nav_right}>
+        {/* Theme toggle (shared desktop + mobile) */}
+        <button
+          className={Style.theme_toggle}
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+        >
+          {theme === "light" ? (
+            <MdSunny className={Style.toggleIcon} />
+          ) : (
+            <MdOutlineWbSunny className={Style.toggleIcon} />
+          )}
+        </button>
+
+        <div className={Style.nav_connect}>
+          <a href="#contact" className={Style.connect_with_me}>
+            Connect With Me
+          </a>
+        </div>
+
+        {/* Animated hamburger (mobile only) */}
+        <button
+          className={`${Style.hamburger} ${menuOpen ? Style.hamburgerOpen : ""}`}
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-drawer"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      {/* Dim backdrop behind the mobile drawer */}
+      <div
+        className={`${Style.backdrop} ${menuOpen ? Style.backdropOpen : ""}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
       />
 
-      {/* toggle mobile views */}
-      <button
-        className={Style.theme_toggle}
-        onClick={toggleTheme}
-        aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+      {/* Mobile slide-in drawer */}
+      <aside
+        id="mobile-drawer"
+        className={`${Style.drawer} ${menuOpen ? Style.drawerOpen : ""}`}
+        aria-hidden={!menuOpen}
       >
-        {theme === "light" ? (
-          <MdSunny
-            Style={{ width: "50px", height: "50px", backGround: "white" }}
-          />
-        ) : (
-          <MdOutlineWbSunny
-            Style={{ width: "50px", height: "50px" }}
-            className={Style.sunny}
-          />
-        )}
-      </button>
-      <MdOutlineMenuOpen className={Style.open_menu} onClick={openMenu} />
+        <span className={Style.drawerTitle}>Navigate</span>
+        <ul className={Style.drawer_menu}>
+          {NAV_ITEMS.map((item) => (
+            <li key={item.id} onClick={() => handleNavClick(item.id)}>
+              <a
+                href={`#${item.id}`}
+                aria-current={activeSection === item.id ? "true" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      <ul ref={menuRef} className={Style.nav_menu}>
-        <FaWindowClose className={Style.menu_closemob} onClick={closeMenu} />
-        <li onClick={() => (handleMenuClick("home"), closeMenu())}>
-          <a href="#home">
-            <p> Home</p>
-          </a>
-          {menu == "home" ? (
-            <img
-              src="/horizontl.svg"
-              className={Style.horizontalline}
-              alt="underlineimg"
-            />
-          ) : (
-            <></>
-          )}
-        </li>
-        <li onClick={() => (handleMenuClick("about"), closeMenu())}>
-          <a href="#about">
-            {" "}
-            <p>About Me</p>
-          </a>
-          {menu == "about" ? (
-            <img
-              src="/horizontl.svg"
-              className={Style.horizontalline}
-              alt="underlineimg"
-            />
-          ) : (
-            <></>
-          )}
-        </li>
-        <li onClick={() => (handleMenuClick("services"), closeMenu())}>
-          <a href="#services">
-            <p>Service</p>
-          </a>
-          {menu == "services" ? (
-            <img
-              src="/horizontl.svg"
-              className={Style.horizontalline}
-              alt="underlineimg"
-            />
-          ) : (
-            <></>
-          )}
-        </li>
-        <li onClick={() => (handleMenuClick("work"), closeMenu())}>
-          <a href="#mywork">
-            <p>Portfolio</p>
-          </a>
-          {menu == "work" ? (
-            <img
-              src="/horizontl.svg"
-              className={Style.horizontalline}
-              alt="underlineimg"
-            />
-          ) : (
-            <></>
-          )}
-        </li>
-        <li onClick={() => (handleMenuClick("contact"), closeMenu())}>
-          <a href="#contact">
-            {" "}
-            <p>Contact</p>
-          </a>
-          {menu == "contact" ? (
-            <img
-              src="/horizontl.svg"
-              className={Style.horizontalline}
-              alt="underlineimg"
-            />
-          ) : (
-            <></>
-          )}
-        </li>
-      </ul>
-      {/* Toggle for Desktop */}
-      <button
-        className={Style.theme_toggle1}
-        onClick={toggleTheme}
-        aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-      >
-        {theme === "light" ? "🌙" : "☀️"}
-      </button>
-
-      <div className={Style.nav_connect}>
-        <a href="#contact" className={Style.connect_with_me}>
+        <a
+          href="#contact"
+          className={Style.drawer_connect}
+          onClick={() => setMenuOpen(false)}
+        >
           Connect With Me
         </a>
-      </div>
-    </div>
+      </aside>
+    </nav>
   );
 };
 
