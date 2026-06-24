@@ -125,20 +125,20 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Dim backdrop behind the mobile drawer */}
+      {/* Transparent click-catcher: closes the menu on an outside tap while
+          leaving the page fully visible behind the compact dropdown. */}
       <div
         className={`${Style.backdrop} ${menuOpen ? Style.backdropOpen : ""}`}
         onClick={() => setMenuOpen(false)}
         aria-hidden="true"
       />
 
-      {/* Mobile slide-in drawer */}
+      {/* Compact mobile dropdown */}
       <aside
         id="mobile-drawer"
         className={`${Style.drawer} ${menuOpen ? Style.drawerOpen : ""}`}
         aria-hidden={!menuOpen}
       >
-        <span className={Style.drawerTitle}>Navigate</span>
         <ul className={Style.drawer_menu}>
           {NAV_ITEMS.map((item) => (
             <li key={item.id} onClick={() => handleNavClick(item.id)}>
