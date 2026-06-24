@@ -11,7 +11,8 @@
   padding: 0 clamp(18px, 4vw, 48px);
   position: sticky;
   top: 0;
-  z-index: 100;
+  /* Above the scroll-to-top button (200) so the open drawer covers it */
+  z-index: 300;
   /* Deeper, layered glass: tint + heavy blur + saturation lift */
   background: var(--glass-bg);
   backdrop-filter: blur(22px) saturate(160%);
@@ -156,7 +157,14 @@
 .backdrop {
   display: none;
   position: fixed;
-  inset: 0;
+  /* Explicit viewport sizing — the navbar's backdrop-filter makes it the
+     containing block for fixed children, so `inset: 0` would only cover the
+     navbar's own height. */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
   z-index: 1000;
   background: rgba(2, 8, 12, 0.55);
   backdrop-filter: blur(2px);
