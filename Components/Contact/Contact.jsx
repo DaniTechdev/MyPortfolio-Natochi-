@@ -59,71 +59,106 @@ const Contact = () => {
     <div id="contact" className={Style.contact}>
       <div className={Style.contact_title}>
         <h1>Get in touch</h1>
-        <img src="/natochi-logo.svg" alt=" theme pattern logo" />
+        <img src="/natochi-logo.svg" alt="" aria-hidden="true" />
       </div>
+      <p className={Style.contact_subtitle}>
+        Have a project in mind or just want to say hi? I&apos;m available for new
+        work, drop a message and I&apos;ll get back to you.
+      </p>
+
       <div className={Style.contact_section}>
         <div className={Style.contact_left}>
-          <h1>Let's talk</h1>
-          <p>
+          <h2>Let&apos;s talk</h2>
+          <p className={Style.left_text}>
             I am currently available to take on new projects, so feel free to
-            get in touch as soon as possible anytime!
+            reach out through any of the channels below.
           </p>
           <div className={Style.contact_details}>
-            <div className={Style.contact_detail}>
-              <BiLogoGmail
-                className={Style.icon}
-                style={{ width: "50px", height: "50px" }}
-              />{" "}
-              <p>tochidan11@gmail.com</p>
-            </div>
+            <a href="mailto:tochidan11@gmail.com" className={Style.contact_detail}>
+              <span className={Style.icon_wrap}>
+                <BiLogoGmail className={Style.icon} />
+              </span>
+              <span className={Style.detail_text}>
+                <span className={Style.detail_label}>Email</span>
+                <span className={Style.detail_value}>tochidan11@gmail.com</span>
+              </span>
+            </a>
+
+            <a href="tel:+2347033541712" className={Style.contact_detail}>
+              <span className={Style.icon_wrap}>
+                <FaPhoneAlt className={Style.icon} />
+              </span>
+              <span className={Style.detail_text}>
+                <span className={Style.detail_label}>Phone</span>
+                <span className={Style.detail_value}>+234 703 354 1712</span>
+              </span>
+            </a>
 
             <div className={Style.contact_detail}>
-              <FaPhoneAlt
-                className={Style.icon}
-                style={{ width: "50px", height: "50px" }}
-              />{" "}
-              <p>+2347033541712</p>
-            </div>
-
-            <div className={Style.contact_detail}>
-              <MdOutlineLocationCity
-                className={Style.icon}
-                style={{ width: "50px", height: "50px" }}
-              />{" "}
-              <p>Enugu State, Nigeria, Lagos State Nigeria</p>
+              <span className={Style.icon_wrap}>
+                <MdOutlineLocationCity className={Style.icon} />
+              </span>
+              <span className={Style.detail_text}>
+                <span className={Style.detail_label}>Location</span>
+                <span className={Style.detail_value}>
+                  Enugu &amp; Lagos State, Nigeria
+                </span>
+              </span>
             </div>
           </div>
         </div>
 
-        {status === "success" && (
-          <div className={Style.success_message}>
-            Message sent successfully! Thank you for contacting us.
-          </div>
-        )}
-
-        {status === "error" && (
-          <div className={Style.error_message}>
-            Something went wrong. Please try again later.
-          </div>
-        )}
-
         <form className={Style.contact_right} ref={form} onSubmit={sendEmail}>
-          <label htmlFor="">Your Name</label>
-          <input type="text" placeholder="Enter your name" name="name" />
-          <label htmlFor="">Your Email</label>
-          <input type="email" placeholder="Enter your email" name="email" />
-          <label htmlFor="">Write your message here</label>
-          <textarea
-            name="message"
-            rows="8"
-            placeholder="Enter your message"
-          ></textarea>
+          {status === "success" && (
+            <div className={Style.success_message}>
+              Message sent successfully — thank you for reaching out!
+            </div>
+          )}
+          {status === "error" && (
+            <div className={Style.error_message}>
+              Something went wrong. Please try again later.
+            </div>
+          )}
+
+          <div className={Style.field}>
+            <label htmlFor="name">Your Name</label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Enter your name"
+              name="name"
+              required
+            />
+          </div>
+
+          <div className={Style.field}>
+            <label htmlFor="email">Your Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              name="email"
+              required
+            />
+          </div>
+
+          <div className={Style.field}>
+            <label htmlFor="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Tell me about your project..."
+              required
+            ></textarea>
+          </div>
+
           <button
             type="submit"
             disabled={isSubmitting}
             className={Style.contact_submit}
           >
-            {isSubmitting ? "Sending..." : "Send"}
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>

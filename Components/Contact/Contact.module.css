@@ -1,19 +1,19 @@
-/* .theme-patternimg {
-  width: 150px;
-  height: 150px;
-} */
-
+/* =====================================================================
+   CONTACT — world-class glass form
+   ===================================================================== */
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 80px;
-  margin: 80px 170px;
+  gap: 18px;
+  width: 100%;
+  max-width: 1180px;
+  margin: 100px auto;
+  padding: 0 24px;
   color: var(--text);
-  /* border: 1px solid red; */
 }
 
+/* Section heading + centered brand mark */
 .contact_title {
   position: relative;
   display: flex;
@@ -23,14 +23,14 @@
 .contact_title h1 {
   position: relative;
   z-index: 1;
-  padding: 0px 30px;
-  font-size: 80px;
-  font-weight: 600;
+  padding: 0 30px;
+  font-size: 64px;
+  font-weight: 700;
 }
 
 .contact_title img {
   position: absolute;
-  top: -52px;
+  top: -50px;
   left: 50%;
   transform: translateX(-50%);
   width: 72px;
@@ -39,19 +39,44 @@
   pointer-events: none;
 }
 
-.contact_section {
-  display: flex;
-  gap: 150px;
+.contact_subtitle {
+  max-width: 620px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
 }
 
+/* ---------- Two-column glass card ---------- */
+.contact_section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  width: 100%;
+  padding: 48px;
+  border-radius: 24px;
+  border: 1px solid var(--card-border);
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--card-bg) 100%, transparent),
+    color-mix(in srgb, var(--card-bg) 45%, transparent)
+  );
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: 0 18px 50px var(--card-shadow),
+    inset 0 1px 0 var(--glass-highlight);
+}
+
+/* ---------- Left: pitch + details ---------- */
 .contact_left {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 22px;
 }
 
-.contact_left h1 {
-  font-size: 80px;
+.contact_left h2 {
+  font-size: 40px;
   font-weight: 700;
   background: var(--gradient-text);
   background-clip: text;
@@ -59,213 +84,201 @@
   -webkit-text-fill-color: transparent;
 }
 
-.contact_left p {
-  max-width: 555px;
-  color: var(--text);
-
-  font-size: 20px;
-  line-height: 35px;
+.left_text {
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--text-secondary);
+  max-width: 420px;
 }
 
 .contact_details {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  color: var(--text);
-
-  font-size: 22px;
+  gap: 14px;
+  margin-top: 6px;
 }
 
 .contact_detail {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease,
+    transform 0.25s ease;
 }
+
+a.contact_detail:hover {
+  background: var(--card-bg);
+  border-color: var(--card-border);
+  transform: translateX(4px);
+}
+
+.icon_wrap {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--primary);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.detail_text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.detail_label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.detail_value {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  word-break: break-word;
+}
+
+/* ---------- Right: form ---------- */
 .contact_right {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 30px;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .contact_right label {
-  color: var(--text);
-
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--text-secondary);
 }
 
-.contact_right input {
-  border: none;
-  width: 700px;
-  height: 78px;
-  padding-left: 20px;
-  border-radius: 4px;
+.contact_right input,
+.contact_right textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
   background: var(--background-soft);
   border: 1px solid var(--card-border);
   color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
 
-  font-family: "Courier New", Courier, monospace;
-  font-size: 20px;
+.contact_right input::placeholder,
+.contact_right textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.contact_right input:focus,
+.contact_right textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--glow-soft);
 }
 
 .contact_right textarea {
-  width: 700px;
-  border: none;
-  padding: 25px;
-  border-radius: 4px;
-  background: var(--background-soft);
-  border: 1px solid var(--card-border);
-  color: var(--text);
-
-  font-size: 20px;
+  resize: vertical;
+  min-height: 150px;
+  line-height: 24px;
 }
 
 .contact_submit {
+  align-self: flex-start;
+  margin-top: 4px;
   border: none;
-  color: var(--button-text);
-  font-weight: 600;
-  background: var(--gradient-primary);
-  font-size: 22px;
+  padding: 15px 40px;
   border-radius: 50px;
-  padding: 20px 60px;
-  margin-bottom: 50px;
+  background: var(--gradient-primary);
+  color: var(--button-text);
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 28px var(--glow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
 .contact_submit:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 34px var(--glow-color);
+  box-shadow: 0 16px 38px var(--glow-color);
 }
 
 .contact_submit:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- Status banners ---------- */
+.success_message,
+.error_message {
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid;
 }
 
 .success_message {
-  position: absolute;
-  z-index: 30;
-  color: green;
-  background-color: #e8f5e9;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  height: fit-content;
+  color: #0f7a4f;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.4);
 }
 
 .error_message {
-  position: absolute;
-  z-index: 30;
-  color: red;
-  background-color: #ffebee;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 4px;
+  color: #c0392b;
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.4);
 }
 
-@media (max-width: 1025px) {
-  .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 0px;
-    color: var(--text);
-    /* border: 1px solid red; */
-    width: 100%;
-  }
-
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+@media (max-width: 900px) {
   .contact_section {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-  }
-
-  .contact_left {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 35%;
-    padding: 10px;
-  }
-
-  .contact_left h1 {
-    font-size: 50px;
-    font-weight: 700;
-    background: var(--gradient-text);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .contact_details {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-    color: var(--text);
-    padding-left: 30px;
-
-    font-size: 22px;
-  }
-
-  .contact_detail {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  .contact_right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    width: 100%;
-    padding: 0 40px;
-  }
-
-  .contact_right input {
-    border: none;
-    width: 70%;
-    height: 60px;
-    /* padding-left: 20px; */
-    border-radius: 4px;
-    background: var(--background-soft);
-    border: 1px solid var(--card-border);
-    color: var(--text);
-
-    font-family: "Courier New", Courier, monospace;
-    font-size: 20px;
-  }
-
-  .contact_right textarea {
-    width: 90%;
-    border: none;
-    padding: 25px;
-    border-radius: 4px;
-    background: var(--background-soft);
-    border: 1px solid var(--card-border);
-    color: var(--text);
-
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact {
-    gap: 50px;
-    margin: 50px 0px;
-    /* align-items: start; */
-    margin-top: 100px;
-    /* border: 1px solid blue; */
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 36px;
   }
 
   .contact_title h1 {
-    padding: 0;
-    font-size: 50px;
-    font-weight: 600;
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    margin: 80px auto;
+    padding: 0 16px;
+    gap: 14px;
+  }
+
+  .contact_title h1 {
+    font-size: 40px;
+    padding: 0 16px;
   }
 
   .contact_title img {
@@ -274,160 +287,43 @@
     height: 52px;
   }
 
-  .contact_section {
-    flex-direction: column;
-  }
-  .contact_left {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 100%;
-    padding: 10px;
-    align-items: center;
-  }
-
-  .contact_left h1 {
-    font-size: 54px;
-  }
-
-  .contact_left p {
-    font-size: 18px;
-  }
-
-  .contact_detail {
-    gap: 20px;
-  }
-
-  .contact_right label {
-    font-size: 20px;
-  }
-
-  .contact_right input {
-    width: 100%;
-    font-size: 20px;
-  }
-
-  .contact_right textarea {
-    width: 100%;
-    font-size: 20px;
-  }
-  .contact_submit {
-    padding: 15px 40px;
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 427px) {
-  .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin: 10px 30px;
-    color: var(--text);
-    /* border: 1px solid red; */
-  }
-
-  .contact_title h1 {
-    padding: 0px 30px;
-    font-size: 40px;
-    font-weight: 600;
-  }
-
-  .contact_left {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .contact_left h1 {
-    font-size: 40px;
-    font-weight: 700;
-    background: var(--gradient-primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .icon {
-    width: 20px;
-    height: 20px;
+  .contact_subtitle {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 14px;
   }
 
   .contact_section {
-    display: flex;
-    gap: 50px;
+    padding: 24px 20px;
+    gap: 30px;
+    border-radius: 20px;
   }
 
-  .contact_right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .contact_right label {
-    color: var(--text);
-
-    font-size: 18px;
-    font-weight: 500;
+  .contact_left h2 {
+    font-size: 32px;
   }
 
-  .contact_right input {
-    border: none;
-    width: 90%;
-    height: 50px;
-    padding-left: 4px;
-    border-radius: 4px;
-    background: var(--background-soft);
-    border: 1px solid var(--card-border);
-    color: var(--text);
-
-    font-family: "Courier New", Courier, monospace;
-    font-size: 20px;
-  }
-  .contact_right textarea {
-    width: 90%;
-    border: none;
-    padding: 25px;
-    border-radius: 4px;
-    background: var(--background-soft);
-    border: 1px solid var(--card-border);
-    color: var(--text);
-
-    font-size: 20px;
-  }
-
-  .contact_submit {
-    padding: 10px 30px;
+  .left_text {
     font-size: 15px;
   }
+
+  .contact_submit {
+    align-self: stretch;
+    text-align: center;
+  }
 }
 
-@media (max-width: 427px) {
-  .contact_left h1 {
-    font-size: 30px;
-    font-weight: 700;
-    background: var(--gradient-primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
+@media (max-width: 360px) {
   .contact_title h1 {
-    padding: 0px 30px;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 34px;
   }
 
-  .contact_right textarea {
-    width: 90%;
-    border: none;
-    padding: 25px;
-    border-radius: 4px;
-    background: var(--background-soft);
-    border: 1px solid var(--card-border);
-    color: var(--text);
+  .icon_wrap {
+    width: 42px;
+    height: 42px;
+  }
 
-    font-size: 20px;
+  .detail_value {
+    font-size: 14px;
   }
 }
