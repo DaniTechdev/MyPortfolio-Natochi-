@@ -44,27 +44,24 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Lock body scroll + close on Escape while the mobile drawer is open.
+  // Close the drawer on Escape. The drawer otherwise stays open while the
+  // page scrolls, so we deliberately do NOT lock body scroll here — the user
+  // can jump between sections and only closes it explicitly.
   useEffect(() => {
     if (!menuOpen) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
 
     const onKeyDown = (e) => {
       if (e.key === "Escape") setMenuOpen(false);
     };
     window.addEventListener("keydown", onKeyDown);
 
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", onKeyDown);
-    };
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [menuOpen]);
 
+  // Selecting a section scrolls to it but keeps the drawer open; it only
+  // closes via the hamburger, the backdrop (outside click), or Escape.
   const handleNavClick = (id) => {
     setActiveSection(id);
-    setMenuOpen(false);
   };
 
   return (
@@ -158,7 +155,7 @@ const Navbar = () => {
         <a
           href="#contact"
           className={Style.drawer_connect}
-          onClick={() => setMenuOpen(false)}
+          onClick={() => handleNavClick("contact")}
         >
           Connect With Me
         </a>
