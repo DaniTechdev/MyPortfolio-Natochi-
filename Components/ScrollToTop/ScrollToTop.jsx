@@ -20,6 +20,7 @@ const ScrollToTop = () => {
       setProgress(height > 0 ? Math.min(scrolled / height, 1) : 0);
     };
 
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -31,6 +32,7 @@ const ScrollToTop = () => {
 
   // Conic gradient ring shows how far down the page the user is.
   const ringStyle = {
+    
     background: `conic-gradient(var(--primary) ${progress * 360}deg, var(--card-border) 0deg)`,
   };
 
